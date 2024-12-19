@@ -2,7 +2,7 @@
   "name": "bulk-http-status-checker",
   "displayName": "Bulk HTTP Status Checker",
   "description": "Check HTTP status codes and redirect chains for multiple URLs in bulk with detailed reporting",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "publisher": "ZaferOnay",
   "icon": "resources/icons/icon.png",
   "author": {
