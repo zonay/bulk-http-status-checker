@@ -1,0 +1,111 @@
+{
+  "name": "bulk-http-status-checker",
+  "displayName": "Bulk HTTP Status Checker",
+  "description": "Check HTTP status codes and redirect chains for multiple URLs in bulk with detailed reporting",
+  "version": "0.1.0",
+  "publisher": "ZaferOnay",
+  "icon": "resources/icons/icon.png",
+  "author": {
+    "name": "Zafer Onay",
+    "url": "https://github.com/zonay"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zonay/bulk-http-status-checker"
+  },
+  "bugs": {
+    "url": "https://github.com/zonay/bulk-http-status-checker/issues"
+  },
+  "homepage": "https://github.com/zonay/bulk-http-status-checker#readme",
+  "keywords": [
+    "url",
+    "http",
+    "status",
+    "redirect",
+    "chain",
+    "inspector",
+    "checker"
+  ],
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onView:urlStatusCheckerView",
+    "onCommand:urlStatusChecker.checkStatus",
+    "onCommand:urlStatusChecker.addUrl",
+    "onCommand:urlStatusChecker.clearUrls"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "urlStatusChecker.checkStatus",
+        "title": "Check URL Status",
+        "icon": "$(play)"
+      },
+      {
+        "command": "urlStatusChecker.addUrl",
+        "title": "Add URL",
+        "icon": "$(add)"
+      },
+      {
+        "command": "urlStatusChecker.clearUrls",
+        "title": "Clear URLs",
+        "icon": "$(clear-all)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "url-status-checker",
+          "title": "URL Status Checker",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "url-status-checker": [
+        {
+          "id": "urlStatusCheckerView",
+          "name": "URL List",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "urlStatusChecker.addUrl",
+          "when": "view == urlStatusCheckerView",
+          "group": "navigation"
+        },
+        {
+          "command": "urlStatusChecker.clearUrls",
+          "when": "view == urlStatusCheckerView",
+          "group": "navigation"
+        },
+        {
+          "command": "urlStatusChecker.checkStatus",
+          "when": "view == urlStatusCheckerView",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^14.x",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
