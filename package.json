@@ -2,7 +2,7 @@
   "name": "bulk-http-status-checker",
   "displayName": "Bulk HTTP Status Checker",
   "description": "Check HTTP status codes and redirect chains for multiple URLs in bulk with detailed reporting",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "ZaferOnay",
   "icon": "resources/icons/icon.png",
   "author": {
@@ -98,7 +98,9 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/node": "^14.x",
