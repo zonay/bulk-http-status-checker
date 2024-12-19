@@ -9,13 +9,6 @@ A Visual Studio Code extension for analyzing HTTP status codes and redirect chai
 - Multiple export formats (JSON/CSV)
 - SSL verification bypass support
 
-## Installation
-
-```bash
-git clone https://github.com/zonay/bulk-http-status-checker
-cd bulk-http-status-checker
-npm install
-```
 
 ## Usage
 
